@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<div class="row">    
+    <div class="col-6">
+        <div id="myPlot" style="width:100%;max-width:700px;margin-left:20px;"></div>
+
+        <script>
+        var xArray = ["Positive", "Neutral", "Negative"];
+        var yArray = [{{ positive }}, {{ neutral }}, {{ negative }}];
+
+        var layout = {title:"Sentiment Analysis"};
+
+        var data = [{labels:xArray, values:yArray, type:"pie"}];
+
+        Plotly.newPlot("myPlot", data, layout);
+        </script>
+    </div>  
+</div>
+
+    
+        <br><br>
+        
+        <br>
+        <br>
+{% endblock %}

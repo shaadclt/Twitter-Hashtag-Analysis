@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body class="container">
+        <div class="loginbox">
+        <a href="/"><img src="{% static 'images/logo.png' %}" class="avatar" width="300" height="300"></a>
+            <h1>Twitter Analysis</h1><br>
+            <button class="btn btn-lg btn-secondary"><a href="{% url 'hashtag_analysis' %}" style="text-decoration:none;color:white">Hashtag Analysis</a></button>
+            <button class="btn btn-lg btn-secondary"><a href="{% url 'tweet_analysis' %}" style="text-decoration:none;color:white">Tweet Analysis</a></button>
+        </div>
+{% endblock %}
